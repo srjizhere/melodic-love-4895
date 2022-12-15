@@ -1,0 +1,118 @@
+*{
+    /* margin: 0%;
+    padding: 0%; */
+    font-family: sans-serif;
+}
+
+#navbar{
+    width: 100%;
+    height: 150px;
+    border: 1px solid red;
+}
+#main{
+    width: 100%;
+    height: auto;
+    border: 0px solid green;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns:16% 82%;
+gap: 20px;
+}
+
+#filter_div{
+    border: 0px solid red;
+   
+}
+
+#product_div{
+    border: 0px solid blue;
+    box-sizing: content-box;
+    
+}
+.filter_div{
+     border-bottom:1px solid grey;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    width: 80%;
+    margin: auto;
+    /* font-weight: bolder; */
+    display: flex;
+    justify-content: space-between;
+    
+}
+.filter_div>div:nth-child(1){
+    font-weight: bold;
+    cursor: pointer;
+}
+.filter_div>div:nth-child(2){
+    border: 0px solid red;
+    font-size: 25px;
+    color: grey;
+}
+#category{
+    width: 100%;
+    height: auto;
+    border: 0px solid blue;
+}
+#category>div:nth-child(1){
+    font-size: 8px;
+}
+#category_box{
+    width: 100%;
+    height: 20px;
+    border: 0px solid yellow;
+    display: flex;
+    justify-content: left;
+}
+#category_box>div{
+    margin-left: 20px;
+}
+#clothes{
+    border: 0px solid red;
+    width: 100%;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+#clothes>div{
+    border: 0px solid grey;
+    height: auto;
+}
+#clothes>div img{
+    width: 100%;
+}
+#sort{
+    border-top: 1px solid rgb(126, 120, 120);
+    height: 40px;
+    width:97.7%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* #sort>div{
+    border: 1px solid blue;
+
+} */
+#sort>div:nth-child(2){
+    margin-right: 20px;
+}
+#filter{
+    /* background-color: aqua; */
+    width: 200px;
+    padding: 8px 10px;
+    border-radius: 0px;
+    border-color: grey;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
