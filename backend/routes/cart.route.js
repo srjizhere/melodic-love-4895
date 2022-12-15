@@ -24,7 +24,7 @@ cartRouter.post("/post",async (req,res)=>{
         const token = req.headers?.authorization.split(" ")[1]
 
     if(token){
-        const decoded = jwt.verify(token,"push")
+        const decoded = jwt.verify(token,"hush")
 
         if(decoded){
             const Userid  = decoded.Userid
@@ -78,28 +78,37 @@ cartRouter.post("/post",async (req,res)=>{
         const cartID = req.params.cartID
         const Userid = req.body.Userid
         const payload = req.body
-        const note = await NoteModel.findOne({_id:cartID})
+        //console.log(payload);
+        const note = await CartModel.findOne({_id:cartID})
         if(Userid !== note.Userid){
             res.send("Not authorised")
         }
         else{
-            await NoteModel.findByIdAndUpdate({_id : cartID},payload)
+            await CartModel.findByIdAndUpdate({_id : cartID},payload)
             res.send({"msg" : "cart updated successfully"})
         }
 })
 
 cartRouter.delete("/delete/:cartID",async(req,res)=>{
-    
-    const cartID = req.params.cartID
+
+    try {
+        const cartID = req.params.cartID
+    const Userid = req.body.Userid
 
     const cart = await CartModel.findOne({_id:cartID})
 
-    if(cartID == task.Userid){
-        await CartModel.findByIdAndDelete({_id:CartID})
-        res.send("vart deleted successfully")
-    }else{
+    if(Userid !== cart.Userid){
         res.send("not authorised")
+        
+    }else{
+        await CartModel.findByIdAndDelete({_id:cartID})
+        res.send("vart deleted successfully")
     }
+    } catch (error) {
+        console.log(error)
+    }
+    
+    
 
 })
 
