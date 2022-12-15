@@ -7,13 +7,15 @@ const {connection} = require("./config/db.js")
 const {userRouter} = require("./routes/user.route.js")
 const {cartRouter} = require("./routes/cart.route.js")
 const {authentication} = require("./middleware/auth.js")
+const {adminRouter}  = require("./routes/admin.route.js")
 
 app.use(express.json())
 
 app.get("/",(req,res)=>{
     res.send("welcome to our ecommerce website")
 })
-app.use("/",userRouter)
+app.use("/user",userRouter)
+app.use("/admin",adminRouter)
 app.use(authentication)
 app.use("/cart",cartRouter)
 app.listen(process.env.port,async()=>{
