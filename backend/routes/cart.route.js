@@ -19,7 +19,25 @@ const upload = multer({
     storage:Storage
 }).single('logo')
 
+const authentication = (req,res,next)=>{
+    const token = req.headers?.authorization.split(" ")[1]
 
+    if(token){
+        const decoded = jwt.verify(token,"hush")
+        console.log(decoded)
+
+        if(decoded){
+            const Userid  = decoded.Userid
+            req.body.Userid = Userid
+            next()
+        }else{
+            res.send({"msg":"please login"})
+        }
+    }else{
+        res.send({"msg":"please login"})
+    }
+}
+cartRouter.use(authentication)
 cartRouter.get("/",async(req,res)=>{
     const Userid = req.body.Userid
     
@@ -33,14 +51,8 @@ cartRouter.get("/",async(req,res)=>{
 cartRouter.post("/post",async (req,res)=>{
 
     try {
-        const token = req.headers?.authorization.split(" ")[1]
-
-    if(token){
-        const decoded = jwt.verify(token,"hush")
-
-        if(decoded){
-            const Userid  = decoded.Userid
-            req.body.Userid = Userid
+        
+        const Userid= req.body.Userid
 
             upload(req,res,async(err)=>{
 
@@ -68,12 +80,8 @@ cartRouter.post("/post",async (req,res)=>{
                     
                 })
             
-        }else{
-            res.send({"msg":"please login"})
-        }
-    }else{
-        res.send({"msg":"please login"})
-    }
+        
+    
 
    
 
