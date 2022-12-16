@@ -2,11 +2,11 @@
 const jwt = require("jsonwebtoken")
 
 
-const authentication = (req,res,next)=>{
+const authen = (req,res,next)=>{
     const token = req.headers?.authorization.split(" ")[1]
 
     if(token){
-        const decoded = jwt.verify(token,"hush")
+        const decoded = jwt.verify(token,"push")
         console.log(decoded)
 
         if(decoded){
@@ -21,4 +21,4 @@ const authentication = (req,res,next)=>{
     }
 }
 
-module.exports = {authentication}
+module.exports = {authen}

@@ -5,10 +5,11 @@ const jwt = require("jsonwebtoken")
 const adminRouter = express.Router()
 
 const {AdminModel} = require("../model/admin.model.js")
+//const {UserModel} = require("../model/users.model.js")
 
 adminRouter.post("/signup",async(req,res)=>{
 
-    const {Name,email,password} = req.body
+    const {Name,email,password,role} = req.body
     const adminPresent = await AdminModel.findOne({email})
 
     if(adminPresent){
@@ -17,7 +18,7 @@ adminRouter.post("/signup",async(req,res)=>{
     try {
         bcrypt.hash(password, 6, async function(err, hash) {
             // Store hash in your password DB.
-            const admin  = new AdminModel({Name,email,password:hash})
+            const admin  = new AdminModel({Name,email,password:hash,role})
             await admin.save()
             res.send({"msg":"signup successfull"})
         });
@@ -33,19 +34,39 @@ adminRouter.post("/login",async(req,res)=>{
 
     try {
         const admin = await AdminModel.find({email})
+        console.log(admin);
+        const hash_password  = admin[0].password
         if(admin.length>0){
-            const hash_password  = admin[0].password
-            bcrypt.compare(password, hash_password, function(err, result) {
-                // result == true
-                if(result){
-                    const token = jwt.sign({"Userid":admin[0]._id},"hush")
-                    res.send({"msg":"login successfull","token":token})
-                }else{
-                    res.send({"msg":"login failed"})
-                }
-            });
-        }else{
+
+            
+            if(admin[0].role == "admin"){
+                bcrypt.compare(password, hash_password, function(err, result) {
+                    // result == true
+                    if(result){
+                        const token = jwt.sign({"Userid":admin[0]._id},"push")
+                        res.send({"msg":"admin login successfull","token":token,role:"admin"})
+                    }else{
+                        res.send({"msg":"login failed"})
+                    }
+                });
+            }else if(admin[0].role == "user"){
+                bcrypt.compare(password, hash_password, function(err, result) {
+                    // result == true
+                    if(result){
+                        const token = jwt.sign({"Userid":admin[0]._id},"hush")
+                        res.send({"msg":"user login successfull","token":token,role:"user"})
+                    }else{
+                        res.send({"msg":"login failed"})
+                    }
+                });
+
+            }
+            
+        }else {
             res.send({"msg":"login failed"})
+            //await UserModel.find({email})
+
+
         }
     } catch (error) {
         res.send({"msg":"Something went wrong, please try again later"})
