@@ -21,7 +21,7 @@ app.use("/",adminRouter)
 app.use(authentication)
 app.use("/cart",cartRouter)
 app.use(authen)
-app.use("/products",productRouter)
+app.use("/Adminproducts",productRouter)
 app.listen(process.env.port,async()=>{
     try {
         await connection

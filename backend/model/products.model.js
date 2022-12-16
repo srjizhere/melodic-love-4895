@@ -12,7 +12,7 @@ const productSchema = mongoose.Schema({
     type:String,
     price:Number,
     rating:Number,
-    Userid:String
+    editorID:String,
 })
 
 const ProductModel = mongoose.model("product",productSchema)

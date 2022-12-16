@@ -21,11 +21,6 @@ const upload = multer({
 
 
 cartRouter.get("/",async(req,res)=>{
-
-
-
-    
-
     const Userid = req.body.Userid
     
 

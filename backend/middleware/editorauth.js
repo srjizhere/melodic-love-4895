@@ -10,8 +10,8 @@ const authen = (req,res,next)=>{
         console.log(decoded)
 
         if(decoded){
-            const Userid  = decoded.Userid
-            req.body.Userid = Userid
+            const editorID  = decoded.editorID
+            req.body.editorID = editorID
             next()
         }else{
             res.send({"msg":"please login"})

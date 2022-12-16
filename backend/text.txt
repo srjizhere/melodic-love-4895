@@ -1,0 +1,24 @@
+signup -{email,pass,name,role,_id(mongoose_created)}-->admin_model/admincollection
+
+user works only on /cart rout for cart
+
+/products--> gives all products added 
+
+
+
+/admin_products inside the headers EditorIDisgiven Required
+const Product_Schema = mongoose.Schema({
+    logo:{
+        data:Buffer,
+        contentType:String
+    },
+    
+    title:String,
+    category:String,
+    type:String,
+    price:Number,
+    rating:Number,
+    EditorID:String
+})
+
+
