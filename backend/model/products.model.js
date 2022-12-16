@@ -1,6 +1,7 @@
+
 const mongoose = require("mongoose")
 
-const cartSchema = mongoose.Schema({
+const productSchema = mongoose.Schema({
     logo:{
         data:Buffer,
         contentType:String
@@ -14,6 +15,6 @@ const cartSchema = mongoose.Schema({
     Userid:String
 })
 
-const CartModel = mongoose.model("cart",cartSchema)
+const ProductModel = mongoose.model("product",productSchema)
 
-module.exports = {CartModel}
+module.exports = {ProductModel}

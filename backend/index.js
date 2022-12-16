@@ -4,20 +4,24 @@ const app = express()
 require('dotenv').config()
 
 const {connection} = require("./config/db.js")
-const {userRouter} = require("./routes/user.route.js")
+
 const {cartRouter} = require("./routes/cart.route.js")
 const {authentication} = require("./middleware/auth.js")
 const {adminRouter}  = require("./routes/admin.route.js")
+const {productRouter} = require("./routes/products.route.js")
+const {authen}   =  require("./middleware/editorauth.js")
 
 app.use(express.json())
 
 app.get("/",(req,res)=>{
     res.send("welcome to our ecommerce website")
 })
-app.use("/user",userRouter)
-app.use("/admin",adminRouter)
+
+app.use("/",adminRouter)
 app.use(authentication)
 app.use("/cart",cartRouter)
+app.use(authen)
+app.use("/products",productRouter)
 app.listen(process.env.port,async()=>{
     try {
         await connection
