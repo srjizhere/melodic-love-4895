@@ -17,41 +17,27 @@ const Storage = multer.diskStorage({
 const upload = multer({
     storage:Storage
 }).single('logo')
+// /Adminproducts/xyz
 
-
-//productRouter.get("/",async(req,res)=>{
-
-    // const query =req.query.gender
-    
-
-    // const data = await CartModel.find({"category":query})
-    // res.send(data)
-//})
+productRouter.get("/",async(req,res)=>{
+    let editorID = req.body.editorID
+    const data = await ProductModel.find({"editorID":editorID})
+    res.send(data)
+});
 
 
 
 productRouter.post("/post",async (req,res)=>{
 
     try {
-        const token = req.headers?.authorization.split(" ")[1]
-
-    if(token){
-        const decoded = jwt.verify(token,"push")
-
-        if(decoded){
-            const Userid  = decoded.Userid
-            req.body.Userid = Userid
-
             upload(req,res,async(err)=>{
-
                 if(err){
                     console.log(err)
                 }else{
-                    const new_cart = new ProductModel({
+                    const adminProd = new ProductModel({
                      logo:{
                         data:req.file.filename,
                         contentType:'image/png'
-        
                      },
                         
                     title:req.body.title,
@@ -59,27 +45,12 @@ productRouter.post("/post",async (req,res)=>{
                     type:req.body.type,
                     price:req.body.price,
                     rating:req.body.rating,
-                    Userid:Userid
-                    
-                        })
-                        await new_cart.save()
+                    editorID:req.body.editorID
+                     })
+                   await adminProd.save()
         
-                }
-                    
+                }   
                 })
-            
-        }else{
-            res.send({"msg":"please login"})
-        }
-    }else{
-        res.send({"msg":"please login"})
-    }
-
-   
-
-
-        
-
         res.send({"msg" : "cproduct added  successfully"})
     } catch (error) {
         console.log(error)
