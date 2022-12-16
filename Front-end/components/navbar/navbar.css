@@ -20,6 +20,9 @@
         #navbar{
             position: sticky;
             top: 0;
+            z-index: 2;
+            background-color: white;
+            width: auto;
             
 
         }
@@ -519,11 +522,11 @@
         }
         #nav2>#mnr{
         /* margin-left: 3%; */
-        width: 27%;
+        width: 38%;
         height: 100%;
         /* border: 1px solid grey; */
         display: flex;
-        
+        justify-content: space-around;
         align-items: center;
         
         
@@ -533,9 +536,11 @@
         }
         #mnr>div>a{
         font-size: 20px;
-        margin-left: 10px;
+        margin-left: 5px;
         text-decoration: none;
         color:#707070;
+        align-items: center;
+    
         
         }
         

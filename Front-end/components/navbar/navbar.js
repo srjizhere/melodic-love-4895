@@ -1,7 +1,5 @@
-function navb(){
-    return 
-
-    `   <!------------------Header-started-------------------->
+export default  function navb(){
+    return `   <!------------------Header-started-------------------->
     <header>
 
         <!--------------Bonus-Area--------------->
@@ -1117,8 +1115,9 @@ function navb(){
             </ul>
         </div>
     </header>
-    <!---------------------------Header-Ended-------------------------->`
+    <!---------------------------Header-Ended-------------------------->
+    `
 }
- export {navb}
+
 
 
