@@ -1,0 +1,129 @@
+
+#footer{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 80vh;
+    bottom: 0;
+    background-color: rgba(227, 227, 255, 0.25);
+}
+
+  .foot {
+    display: flex;
+    height:  80%;
+    justify-content: space-evenly;
+  
+    /* border: 1px solid green; */
+}
+   
+.foot-column{
+    /* border: 2px solid gold; */
+    height: 100%;
+    width:auto ;
+    justify-content:left;
+    display: flex;
+    flex-direction: column;
+  
+}
+.foot-column>ul{
+    list-style-type: none;
+    text-align: left;
+    margin-left: 0;
+}
+.head{
+    /* border: 1px solid red; */
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.781);
+    font-family: monospace;
+}
+.foot-column li{
+    font-size:x-large ;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   color: rgba(12, 5, 5, 0.597);
+   margin-left: 0;
+   margin-top: 10%;
+   
+
+}
+.foot-column li:hover{
+ transform: scale(1.03);
+ transition: ease-in-out .3s;
+ text-decoration:underline;
+   cursor: pointer;
+
+}
+#media{
+    /* border: 1px solid red; */
+    width: 30%;
+    text-align: center;
+}
+#mobpic{
+    display: flex;
+    height: 10vh;
+    justify-content:center;
+    margin-top: 5vh;
+}
+#mobpic:hover{
+cursor: pointer;    
+transform: scale(1.09);
+transition: .4s ease-in-out;
+}
+#mobpic>h3{
+color: rgba(55, 10, 10, 0.786);
+font-size: x-large;
+}
+#mobpic>img{
+    width: 10%;
+    height: 90%;
+    padding: 10px;
+
+}
+#srjimgfooterlast{
+    width: 100%;
+    /* border: 1px dotted blue; */
+    display: flex;
+    padding-right: 10px;
+    justify-content: space-evenly;
+    margin-top: 5vh;
+    left: 0;
+}
+.srjimgmedialast{
+    width: 15%;
+    height: 100%;
+    /* border: 1px solid red; */
+    padding: 1px;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.srjimgmedialast:hover{
+    cursor: pointer;
+    scale: 1.3;
+    transition: 0.4s ease-in-out;
+ 
+}
+.srjimgmedialast>img{
+    width: 100%;
+ 
+}
+#foot-second{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2vh;
+}
+#foot-second>p{
+    padding-top: 2vh;
+    cursor: pointer;
+    color: rgba(31, 29, 29, 0.739);
+    font-size: 3.6vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+}
+#foot-second>p:hover{
+    transform: scale(1.04);
+    transition: .5 ease-in-out;
+    background-color: rgba(240, 255, 255, 0.719);
+
+} 
+ 
