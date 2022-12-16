@@ -34,7 +34,7 @@ adminRouter.post("/login",async(req,res)=>{
 
     try {
         const admin = await AdminModel.find({email})
-        console.log(admin);
+        //console.log(admin);
         const hash_password  = admin[0].password
         if(admin.length>0){
             
@@ -43,7 +43,7 @@ adminRouter.post("/login",async(req,res)=>{
                 bcrypt.compare(password, hash_password, function(err, result) {
                     // result == true
                     if(result){
-                        const token = jwt.sign({"editorID":admin[0]._id},"push")
+                        const token = jwt.sign({"editorID":admin[0]._id},"admin")
                         res.send({"msg":"admin login successfull","token":token,role:"admin"})
                     }else{
                         res.send({"msg":"login failed"})
