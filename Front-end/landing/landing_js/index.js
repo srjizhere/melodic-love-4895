@@ -1,3 +1,4 @@
+
 let fiarr = ["./landing/landing_img/caroimgwht.png","./landing/landing_img/carofst2nd.png","https://www.andindia.com/on/demandware.static/-/Sites-AND-Library/default/dw4e75c839/images/mega-menu/blog/diva-dresses-m.jpg"]
 let fi =0;
 let fset;
@@ -177,7 +178,7 @@ festiv_deco(deco_i)
 function festiv_deco(deco_i){
 
     let box = document.querySelectorAll(".obj_chunk");
-    console.log(box)
+    // console.log(box)
     box.forEach(e => {
         e.innerHTML=null;
     });
@@ -217,7 +218,7 @@ function festiv_deco(deco_i){
             else if(r<5){
              rating.setAttribute("class","best")
             }
-            else if(r=5){
+            else if(r==5){
              rating.setAttribute("class","impossible")
             }
         deco_i++;

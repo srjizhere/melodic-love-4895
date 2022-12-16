@@ -10,10 +10,11 @@
 #container{
     width: 100%;
     overflow: hidden;
-    border: 1px solid red; 
+    /* border: 1px solid red;  */
 }
 #fpre{
     position: absolute;
+
     top: 45%;
     left: 0.6%;
     background-color: rgba(5, 5, 0, .1);
@@ -99,8 +100,8 @@
 }
 .obj_chunk:hover{
     box-shadow: rgba(87, 87, 201, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    scale: 1.08;
-    transition: .3s ease-in-out;
+    transform: scale(1.4);
+    transition: .9s ease-in-out;
     overflow: hidden;
 }
 .obj_chunk>h3,.obj_chunk>h2,.obj_chunk>h4{
@@ -285,10 +286,10 @@ color: rgba(0, 0, 0, 0.82);
     text-align: center;
 }
 #details>h1{
-    color: rgba(219, 6, 6, 0.853);
-    font-size: xx-large;
+    color: rgba(219, 6, 6, 0.574);
+    font-size: x-large;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-box-shadow: rgba(87, 87, 201, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+/* box-shadow: rgba(87, 87, 201, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
 padding: 3%;
 font-size: 70px;
 border-radius: 20px;
@@ -299,7 +300,7 @@ border-radius: 20px;
 
     
     padding: 2%;
-    box-shadow: rgba(87, 87, 201, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    /* box-shadow: rgba(87, 87, 201, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
     
     color: rgba(39, 69, 26, 0.687);
     font-size: 30px;
@@ -308,7 +309,7 @@ border-radius: 20px;
     border-radius: 20px;
     padding: 3%;
     color: rgba(25, 0, 0, 0.83);
-    box-shadow: rgba(87, 87, 201, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    /* box-shadow: rgba(87, 87, 201, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
     font-size: 30px;
     font-family: monospace;
 }
@@ -342,6 +343,7 @@ border-radius: 20px;
     height: 50vh;
     justify-content: space-evenly;
     display: flex;
+    margin-bottom: 5vh;
 }
 .catachild{
     height: 100%;
