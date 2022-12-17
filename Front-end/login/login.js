@@ -25,9 +25,9 @@ let obj = {
 }
 
 function logit(){
-    let e =  document.getElementById("email");
+    let e =  document.getElementById("lemail");
        let email= e.value;
-    let psd =  document.getElementById("Password");
+    let psd =  document.getElementById("lpass");
     let password = psd.value;
  let obj = {
      email,
@@ -45,6 +45,12 @@ function logit(){
    }).then(function(data){
      console.log(data);
     localStorage.setItem("token",data.token)
+    if(data.role == "admin"){
+      window.location.href = "../../admin/admin.html"
+    }else if(data.role=="user"){
+      window.location.href = "../index.html"
+
+    }
 
    }).catch(error=>{console.log(error)})
 
