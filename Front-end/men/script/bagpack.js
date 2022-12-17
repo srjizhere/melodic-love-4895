@@ -24,7 +24,7 @@ function show_filter_data(data){
     })
 }
 let testing_div=document.querySelectorAll(".test")
-testing_div.forEach(function(el){
+testing_div.forEach(function(el,i){
     el.addEventListener("click",function (){
         test(el)
     })
@@ -231,7 +231,7 @@ let clothes_data=[
 show_clothes(clothes_data)
 
 function show_clothes(data){
-    data.forEach(function(el,i){
+    data.forEach(function(el){
         let card=document.createElement("div")
         card.addEventListener("click",function(){
             testing(el,i)

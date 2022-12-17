@@ -1,6 +1,6 @@
 
 
-
+let addPage=[]
 // filter div
 
 let filter_data=["Size","Color","Brand","Feature","Fit","Material","Occasion","Price","Sale","Sleeve Length","Sports League","Sports Team","Style"]
@@ -351,8 +351,11 @@ let clothes_data=[
 show_clothes(clothes_data)
 
 function show_clothes(data){
-    data.forEach(function(el){
+    data.forEach(function(el,i){
         let card=document.createElement("div")
+        card.addEventListener("click",function(){
+            testing(el,i)
+        })
         let img_div=document.createElement("div")
         let img2=document.createElement("img")
         img2.src=el.img2
@@ -374,3 +377,18 @@ function show_clothes(data){
         document.querySelector("#clothes").append(card)
     })
 }
+
+
+function testing(el,i){
+    //console.log("hello",i,"element",el)
+    addPage.push(el)
+    //console.log("addPage",addPage)
+    localStorage.setItem("add_page_data",JSON.stringify(addPage))
+    // location.replace("http://127.0.0.1:5500/melodic-love-4895/Front-end/add_oage/add.html")
+    // window.location.href="../../../add_oage/add.html"
+    setTimeout(function(){
+        document.location.href="../../../add_oage/add.html"
+    },500)
+}
+
+//http://127.0.0.1:5500/melodic-love-4895/Front-end/women/shoes/shoes.html
