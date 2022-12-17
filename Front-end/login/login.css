@@ -1,0 +1,76 @@
+#regis{
+    width: 25%;
+    height: 300px;
+    border: 1px solid grey;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    border-radius: 5%;
+    
+    }
+    
+    #regis>input{
+    
+        width: 80%;
+        height: 25px;
+        margin-top: 15px;
+    margin-left: 9%;
+                                     
+    
+    }
+    #regis>h3{
+    
+    margin-left: 35%;
+    
+    }
+    #regis>select{
+        margin-left: 9%;
+        margin-top: 15px;
+        width: 81%;
+        height: 28px;
+    
+    }
+    #regis>button{
+    
+    margin-left: 40%;
+    margin-top:15px ;
+    width: 25%;
+    height: 30px;
+    
+    }
+    
+    #login{
+    
+        width: 25%;
+    height: 200px;
+    border: 1px solid grey;
+    margin: auto;
+    margin-top: 100px;
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5%;
+    
+    }
+    
+    #login>button{
+        margin-left: 40%;
+    margin-top:15px ;
+    width: 25%;
+    height: 30px;
+    }
+    
+    #login>h3{
+        margin-left: 35%;
+    }
+    
+    #login>input{
+        width: 80%;
+        height: 25px;
+        margin-top: 10px;
+    margin-left: 9%;
+    
+    }
+    
+    
+    
