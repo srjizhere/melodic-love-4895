@@ -5,7 +5,8 @@ const jwt = require("jsonwebtoken")
 const adminRouter = express.Router()
 
 const {AdminModel} = require("../model/admin.model.js")
-//const {UserModel} = require("../model/users.model.js")
+//const {UserModel} = require("../model/users.model.js
+
 
 adminRouter.post("/signup",async(req,res)=>{
 
