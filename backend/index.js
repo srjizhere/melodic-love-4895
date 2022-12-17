@@ -14,6 +14,10 @@ const {productRouter} = require("./routes/products.route.js")
 const {ProductModel} = require("./model/products.model")
 
 app.use(express.json())
+const cors = require('cors')
+
+ 
+app.use(cors())
 
 app.get("/",async(req,res)=>{
 
