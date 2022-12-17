@@ -34,7 +34,7 @@ adminRouter.post("/login",async(req,res)=>{
 
     try {
         const admin = await AdminModel.find({email})
-        //console.log(admin);
+        console.log(admin);
         const hash_password  = admin[0].password
         if(admin.length>0){
             
