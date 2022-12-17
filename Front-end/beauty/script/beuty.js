@@ -1,5 +1,5 @@
 
-
+let addPage=[]
 
 // filter div
 
@@ -497,8 +497,11 @@ let clothes_data=[
 show_clothes(clothes_data)
 
 function show_clothes(data){
-    data.forEach(function(el){
+    data.forEach(function(el,i){
         let card=document.createElement("div")
+        card.addEventListener("click",function(){
+            testing(el,i)
+        })
         let img_div=document.createElement("div")
         let img2=document.createElement("img")
         img2.src=el.img2
@@ -519,4 +522,12 @@ function show_clothes(data){
         card.append(img_div,tag,brand,name,price)
         document.querySelector("#clothes").append(card)
     })
+}
+
+function testing(el,i){
+    //console.log("hello",i,"element",el)
+    addPage.push(el)
+    //console.log("addPage",addPage)
+    localStorage.setItem("add_page_data",JSON.stringify(addPage))
+    
 }
