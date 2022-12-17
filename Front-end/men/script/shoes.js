@@ -372,6 +372,15 @@ let clothes_data=[
 
 ]
 show_clothes(clothes_data)
+cheking(clothes_data)
+function cheking(data){
+data.forEach(function(el){
+    console.log("prashant",el.price)
+    let d=el.sort(function(el){
+        return el.price
+    })
+})
+}
 
 function show_clothes(data){
     data.forEach(function(el){
@@ -384,6 +393,7 @@ function show_clothes(data){
         img2.src=el.img2
         let img1=document.createElement("img")
         img1.src=el.img1
+        
         let tag=document.createElement("h4")
         tag.innerText="Arriving Before Chritmas"
         tag.style.color="green"

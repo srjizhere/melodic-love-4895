@@ -384,5 +384,11 @@ function testing(el,i){
     addPage.push(el)
     //console.log("addPage",addPage)
     localStorage.setItem("add_page_data",JSON.stringify(addPage))
-    
+    // location.replace("http://127.0.0.1:5500/melodic-love-4895/Front-end/add_oage/add.html")
+    // window.location.href="../../../add_oage/add.html"
+    setTimeout(function(){
+        document.location.href="../../../add_oage/add.html"
+    },500)
 }
+
+//http://127.0.0.1:5500/melodic-love-4895/Front-end/women/shoes/shoes.html
