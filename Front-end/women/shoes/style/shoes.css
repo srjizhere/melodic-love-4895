@@ -7,13 +7,13 @@
 #navbar{
     width: 100%;
     height: 150px;
-    border: 1px solid red;
+    border: 0px solid red;
 }
 #main{
     width: 100%;
     height: auto;
     border: 0px solid green;
-    margin-top: 20px;
+    margin-top: 50px;
     display: grid;
     grid-template-columns:16% 82%;
 gap: 20px;
@@ -115,4 +115,10 @@ a{
 a:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+#footer{
+    border: 1px solid red;
+    margin-left: -100px;
+    width: 100%;
+    margin-top: 100px;
 }

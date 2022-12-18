@@ -1,5 +1,5 @@
 
-let addPage=[]
+let addPage=JSON.parse(localStorage.getItem("add_page_data")) ||[]
 
 // filter div
 

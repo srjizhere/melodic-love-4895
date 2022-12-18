@@ -1,5 +1,5 @@
 
-let addPage=[]
+let addPage=JSON.parse(localStorage.getItem("add_page_data")) ||[]
 
 // filter div
 
@@ -383,7 +383,7 @@ data.forEach(function(el){
 }
 
 function show_clothes(data){
-    data.forEach(function(el){
+    data.forEach(function(el,i){
         let card=document.createElement("div")
         card.addEventListener("click",function(){
             testing(el,i)
