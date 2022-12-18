@@ -1,6 +1,6 @@
 
 
-let addPage=[]
+let addPage=JSON.parse(localStorage.getItem("add_page_data")) ||[]
 // filter div
 
 let filter_data=["Size","Color","Brand","Feature","Fit","Material","Occasion","Price","Sale","Sleeve Length","Sports League","Sports Team","Style"]
@@ -350,6 +350,8 @@ let clothes_data=[
 ]
 show_clothes(clothes_data)
 
+
+console.log("hiii prashant")
 function show_clothes(data){
     data.forEach(function(el,i){
         let card=document.createElement("div")
