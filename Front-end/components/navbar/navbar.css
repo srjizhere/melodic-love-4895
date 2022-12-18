@@ -560,6 +560,17 @@
         }
         
 
+        #logo{
+            /* border: 1px solid grey; */
+            display: flex;
+            align-items: center;
+          
+        }
+        #logo>img{
+            width: 120%;
+        }
+        
+        
 
 
 
