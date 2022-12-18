@@ -1,5 +1,5 @@
 export default  function navb(){
-    return `   <!------------------Header-started-------------------->
+    return `    <!------------------Header-started-------------------->
     <header>
 
         <!--------------Bonus-Area--------------->
@@ -23,8 +23,7 @@ export default  function navb(){
 
         <div id="nav2">
  <!----------------Logo-Area----------->
-            <div id="logo">   </div>
-            
+            <div id="logo"> <img src="https://i.ibb.co/BVspTR3/Fashion-removebg-preview.png" alt=""> </div>
 <!----------------Logo-Area----------->
             
             <div id="sear"><div id="s">    <input type="text" name="" id="" placeholder="  Search for products or brands "></div></div>
