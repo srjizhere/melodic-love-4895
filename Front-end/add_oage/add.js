@@ -20,7 +20,7 @@ show_details(final_data)
 //     //     document.getElementById("pics").append(card1,card2)
 //     // })
 // }
-
+let add_to_cart=JSON.parse(localStorage.getItem("add_to_cart"))||[]
 function show_picc(data){
             let card1=document.createElement("div")
         let card2=document.createElement("div")
@@ -49,6 +49,9 @@ function show_details(data){
     option.innerText="Size"
     let add_button=document.createElement("button")
     add_button.innerText="Add to Bag"
+    add_button.addEventListener("click",function(){
+        addtoCart(data)
+    })
     size.append(option)
 
     document.getElementById("details").append(title,brand,price,size,add_button)
@@ -82,4 +85,11 @@ function recent_view(data){
         card.append(img_div,tag,brand,name,price)
         document.querySelector("#recent_view").append(card)
     })
+}
+
+function addtoCart(data){
+    console.log(data)
+
+    add_to_cart.push(data)
+    localStorage.setItem("add_to_cart",JSON.stringify(add_to_cart))
 }
