@@ -19,6 +19,11 @@
                                      
     
     }
+    #data{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     #regis>h3{
     
     margin-left: 35%;

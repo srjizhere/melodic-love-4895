@@ -128,6 +128,7 @@ let clothes_data=[
     },
 
 ]
+
 show_clothes(clothes_data)
 
 function show_clothes(data){
