@@ -6,30 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="../components/foot/footer.css">
+    <link rel="stylesheet" href="../components/navbar/navbar.css">
   </head>
   <body>
-    <div id="regis">
-      <h3>Registration</h3>
-      <input id="name" type="text" placeholder="Name" /><br />
-      <input type="text" name="" id="email" placeholder="Email" /><br />
-      <input type="text" name="" id="Password" placeholder="Password" /><br />
-      <!-- <label for="">Role</label> -->
-      <select name="" id="role">
-        <option value="admin">admin</option>
-        <option value="user">user</option></select
-      ><br />
-
-      <button onclick="regit()">Submit</button>
+    <div id="navbar"></div>
+    <div id="data">
+      <div id="regis">
+        <h3>Registration</h3>
+        <input id="name" type="text" placeholder="Name" /><br />
+        <input type="text" name="" id="email" placeholder="Email" /><br />
+        <input type="text" name="" id="Password" placeholder="Password" /><br />
+        <!-- <label for="">Role</label> -->
+        <select name="" id="role">
+          <option value="admin">admin</option>
+          <option value="user">user</option></select
+        ><br />
+  
+        <button onclick="regit()">Submit</button>
+      </div>
+  
+      <div id="login">
+        <h3>Login</h3>
+  
+        <input type="text" name="" id="lemail" placeholder="Email" /><br />
+        <input type="text" name="" id="lpass" placeholder="Password" />
+        <button onclick="logit()" >Submit</button>
+      </div>
     </div>
-
-    <div id="login">
-      <h3>Login</h3>
-
-      <input type="text" name="" id="lemail" placeholder="Email" /><br />
-      <input type="text" name="" id="lpass" placeholder="Password" />
-      <button onclick="logit()" >Submit</button>
-    </div>
+    
+    <div id="footer"></div>
   </body>
-  <script src="./login.js"></script>
+  <script type="module" src="./login.js"></script>
   
 </html>

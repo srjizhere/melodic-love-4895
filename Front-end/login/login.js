@@ -1,4 +1,12 @@
 
+import footer from "../components/foot/footer.js"
+let ft = document.getElementById("footer");
+ft.innerHTML=footer()
+
+import navb from "../components/navbar/navbar.js"
+let nb = document.getElementById("navbar");
+nb.innerHTML = navb()
+
 function regit(){
    let Name =  document.getElementById("name").value;
    let email =  document.getElementById("email").value;
@@ -10,7 +18,7 @@ let obj = {
     password,
     role
 }
-   fetch('https://uninterested-jewelry-fly.cyclic.app/signup', {
+   fetch('https://healthy-bee-handbag.cyclic.app/signup', {
     method: 'POST',
     body: JSON.stringify(obj),
     headers: {
@@ -33,7 +41,7 @@ function logit(){
      email,
      password
  }
-    fetch('https://uninterested-jewelry-fly.cyclic.app//login', {
+    fetch('https://healthy-bee-handbag.cyclic.app/login', {
      method: 'POST',
      body: JSON.stringify(obj),
      headers: {
@@ -46,7 +54,7 @@ function logit(){
      console.log(data);
     localStorage.setItem("token",data.token)
     if(data.role == "admin"){
-      window.location.href = "../../admin/admin.html"
+      window.location.href = "../admin/admin.html"
     }else if(data.role=="user"){
       window.location.href = "../index.html"
 
