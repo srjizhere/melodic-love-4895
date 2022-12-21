@@ -135,7 +135,7 @@ export default  function navb(){
                         </div>
                     </div>
                 </li>
-                <li id="women"><a href="#">Women</a>
+                <li id="women"><a href="/Front-end/women/women.html">Women</a>
                     <div class="sub-nav2">
                         <div class="col">
                             <ul>
@@ -247,7 +247,7 @@ export default  function navb(){
                         </div>
                     </div>
                 </li>
-                <li id="men"><a href="#">Men</a>
+                <li id="men"><a href="/Front-end/men/men.html">Men</a>
                     <div class="sub-nav3">
                         <div class="col">
                             <ul>
@@ -354,7 +354,7 @@ export default  function navb(){
                         </div>
                     </div>
                 </li>
-                <li id="kids"><a href="#">Kids</a>
+                <li id="kids"><a href="/Front-end/kids/kid.html">Kids</a>
                     <div class="sub-nav4">
                         <div style="width: 14%;" class="col">
                             <ul>
@@ -663,7 +663,7 @@ export default  function navb(){
                         </div>
                     </div>
                 </li>
-                <li id="home"><a href="#">Home</a>
+                <li id="home"><a href="/Front-end/index.html">Home</a>
                     <div class="sub-nav7">
                         <div style="width: 14%;" class="col">
                             <ul>
@@ -762,7 +762,7 @@ export default  function navb(){
                         </div>
                     </div>
                 </li>
-                <li id="beauty"><a href="#">Beauty</a>
+                <li id="beauty"><a href="/Front-end/beauty/beauty.html">Beauty</a>
                     <div class="sub-nav8">
                         <div style="width: 14%;" class="col">
                             <ul>
@@ -791,7 +791,7 @@ export default  function navb(){
                         </div>
                         <div class="col lightCol">
                             <ul>
-                                <li style="margin-bottom: 7px;" class="bold"><a href="">Beauty Brands</a></li>
+                                <li style="margin-bottom: 7px;" class="bold"><a href="/Front-end/beauty/beauty.html">Beauty Brands</a></li>
                                 <li><a href="">Bobbi Brown</a></li>
                                 <li class="marginBottom"><a href="">CHANEL</a></li>
                                 <li class="bold"><a href="">Charlotte Tilbury</a></li>

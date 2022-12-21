@@ -23,6 +23,7 @@
             z-index: 2;
             background-color: white;
             width: auto;
+            padding: 1%;
             
 
         }
@@ -571,6 +572,12 @@
         }
         
         
+    #sale{
+        cursor: not-allowed;
+    }
+    #sale:hover{
+        cursor: not-allowed;
+    }
 
 
 
