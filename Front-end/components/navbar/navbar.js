@@ -1,5 +1,5 @@
-export default  function navb(){
-    return `    <!------------------Header-started-------------------->
+export default function navb() {
+  return `    <!------------------Header-started-------------------->
     <header>
 
         <!--------------Bonus-Area--------------->
@@ -30,7 +30,7 @@ export default  function navb(){
             
                 <div id="mnr"> 
              <div>
-                <a href="/"> <i class="fa-solid fa-user-tie"></i> Signin </a>
+                <a href="/login/login.html"> <i class="fa-solid fa-user-tie"></i> Signin </a>
             
                 <a href="/"><svg width="24px" height="24px" focusable="false" class="yIeXN NMGTk"><g fill="none" stroke="#393939" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><path d="M.756.75h22.488v20.309H.756z"></path><path d="M7.573 20.988v-4.813h8.854v4.849M12 20.952v-4.633"></path></g><path d="M14.42 11.854V5.248h-.982v4.103L9.58 5.113v6.578h.979V7.649l.036.037z" fill="#393939"></path></svg> Stores</a>
             
@@ -1115,8 +1115,5 @@ export default  function navb(){
         </div>
     </header>
     <!---------------------------Header-Ended-------------------------->
-    `
+    `;
 }
-
-
-
