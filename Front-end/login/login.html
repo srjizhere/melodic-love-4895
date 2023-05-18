@@ -10,34 +10,57 @@
     <link rel="stylesheet" href="../components/navbar/navbar.css">
   </head>
   <body>
-    <div id="navbar"></div>
-    <div id="data">
-      <div id="regis">
-        <h3>Registration</h3>
-        <input id="name" type="text" placeholder="Name" /><br/>
-        <input type="text" name="" id="email" placeholder="Email"/><br />
-        <input type="text" name="" id="Password" placeholder="Password" /><br />
-        <!-- <label for="">Role</label> -->
-        <select name="" id="role">
-          <option value="admin">admin</option>
-          <option value="user">user</option></select
-        ><br />
-  
-        <button onclick="regit()">Submit</button>
+    <button id="loginBtn">login</button>
+    
+    <div id="loginPopup" class="popup">
+      
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br>
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required><br>
+
+          
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" id="signupLink">Signup</a></p>
       </div>
-  
-      <div id="login">
-        <h3>Login</h3>
-  
-        <input type="text" name="" id="lemail" placeholder="Email" /><br />
-        <input type="text" name="" id="lpass" placeholder="Password" />
-        <button onclick="logit()" >Submit</button>
+    </div>
+
+    <div id="signupPopup" class="popup">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Signup</h2>
+        <form>
+          <label for="sname">Name:</label>
+          <input type="text" id="sname" name="name" required>
+          
+          <label for="semail">Email:</label>
+          <input type="email" id="semail" name="email" required>
+          
+          <label for="spassword">Password:</label>
+          <input type="password" id="spassword" name="password" required>
+          
+          <label for="srole">Role:</label>
+          <select id="srole" name="role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          
+          <button type="submit">Signup</button>
+        </form>
+        <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
       </div>
     </div>
     
     <div id="footer"></div>
   </body>
   <script  src="./login.js"></script>
-  <script type="module" src="./logingo.js"></script>
-  
+
+
+
 </html>

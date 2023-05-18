@@ -1,81 +1,106 @@
-#regis{
-    width: 25%;
-    height: 300px;
-    border: 1px solid grey;
-    margin: auto;
-    margin-top: 100px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
     
-    border-radius: 5%;
-    
-    }
-    
-    #regis>input{
-    
-        width: 80%;
-        height: 25px;
-        margin-top: 15px;
-    margin-left: 9%;
-                                     
-    
-    }
-    #data{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #regis>h3{
-    
-    margin-left: 35%;
-    
-    }
-    #regis>select{
-        margin-left: 9%;
-        margin-top: 15px;
-        width: 81%;
-        height: 28px;
-    
-    }
-    #regis>button{
-    
-    margin-left: 40%;
-    margin-top:15px ;
-    width: 25%;
-    height: 30px;
-    
-    }
-    
-    #login{
-    
-        width: 25%;
-    height: 200px;
-    border: 1px solid grey;
-    margin: auto;
-    margin-top: 100px;
-    
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 5%;
-    
-    }
-    
-    #login>button{
-        margin-left: 40%;
-    margin-top:15px ;
-    width: 25%;
-    height: 30px;
-    }
-    
-    #login>h3{
-        margin-left: 35%;
-    }
-    
-    #login>input{
-        width: 80%;
-        height: 25px;
-        margin-top: 10px;
-    margin-left: 9%;
-    
-    }
-    
-    
-    
+
+.popup {
+  display: none; /* Hide the popup by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height:100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.605); /* Add a dark background behind the popup */
+}
+.popup h2{
+  text-align: center;
+}
+/* Style the popup content */
+.popup-content {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  border-radius: 10px;
+}
+
+/* Style the close button */
+.popup .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.popup .close:hover,
+.popup .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Style the form */
+.popup form {
+  display: flex;
+  flex-direction: column;
+ 
+}
+.popup label{
+font-weight: bolder;
+margin-bottom: 2px;
+}
+/* Style the input fields */
+.popup input[type="email"],
+.popup input[type="password"],.popup input[type="text"] {
+  font-size: larger;
+  font-weight: bolder;
+  width: 100%;
+  padding: 8px 0 15px 5px;
+  margin: 8px 0 15px 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.popup select{
+  font-size: larger;
+    width: 100%;
+  padding: 8px 10px;
+  border: 2px solid #484747;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+/* Style the submit button */
+.popup button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.popup button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Style the link to the signup page */
+.popup p a {
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+.popup p a:hover {
+  text-decoration: underline;
+}
