@@ -171,8 +171,7 @@ let objarr = [
         rating:2
     }
     
-]
-console.log(objarr.length)
+];
 let deco_i=0;
 festiv_deco(deco_i)
 function festiv_deco(deco_i){
@@ -185,7 +184,6 @@ function festiv_deco(deco_i){
     box.forEach(e => {
         let imae = document.createElement("img")
         imae.setAttribute("src",objarr[deco_i].img)
-        console.log(imae)
         let occasion = document.createElement("h3")
         occasion.innerText= objarr[deco_i].occasion;
         occasion.setAttribute("class","occasion")

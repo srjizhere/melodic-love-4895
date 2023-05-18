@@ -27,6 +27,9 @@ export default function navb() {
                     <div class="accessChild" id="loginBtn"><i class="fa-solid fa-user-tie fa-2xl"></i>
                         <p>Login</p>
                     </div>
+                    <div class="accessChild" id="logOutBtn"><i class="fa-solid fa-right-from-bracket fa-2xl"></i>
+                        <p>LogOut</p>
+                    </div>
                     <div class="accessChild"><i class="fa-solid fa-cart-shopping fa-2xl"></i><p>Cart</p></div>
                     <div class="accessChild"><i class="fa-sharp fa-solid fa-clock-rotate-left fa-2xl"></i><p>Purchases</p></div>
 
@@ -105,5 +108,9 @@ export default function navb() {
         <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
       </div>
     </div>
+      <div class="popup" id="SucessfullMessage">
+      <button id="SucessfullMessagebtn" class="SucessfullMessagebtn">Login SucessFull</button>
+    </div>
+
     `;
 }
