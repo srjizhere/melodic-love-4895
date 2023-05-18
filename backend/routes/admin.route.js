@@ -12,7 +12,7 @@ adminRouter.post("/signup",async(req,res)=>{
     const {name,email,password,role} = req.body
     const adminPresent = await AdminModel.findOne({email});
     if(adminPresent){
-       return res.send({"msg":"try logging in admin already present"})
+       return res.send({"err":"try logging in admin already present"})
     }
     try {
         bcrypt.hash(password, 6, async function(err, hash) {
@@ -22,7 +22,7 @@ adminRouter.post("/signup",async(req,res)=>{
            return res.send({"msg":"signup successfull"})
         });
     } catch (error) {
-        res.send({"msg":"some error in SignUp"})
+        res.send({"err":"some error in SignUp"})
         console.log("error in signing up")
         console.log(error)
     }
@@ -34,6 +34,7 @@ adminRouter.post("/login",async(req,res)=>{
 
     try {
         const admin = await AdminModel.find({email})
+        console.log(admin);
         const hash_password  = admin[0].password
         if(admin.length>0){
             if(admin[0].role == "admin"){
@@ -41,9 +42,9 @@ adminRouter.post("/login",async(req,res)=>{
                     // result == true
                     if(result){
                         const token = jwt.sign({"editorID":admin[0]._id},"admin")
-                        res.send({"msg":"admin login successfull","token":token,role:"admin"})
+                        res.send({"msg":"admin login successfull","token":token,role:"admin",name:admin[0].name})
                     }else{
-                        res.send({"msg":"login failed"})
+                        res.send({"err":"login failed"})
                     }
                 });
             }else if(admin[0].role == "user"){
@@ -51,19 +52,19 @@ adminRouter.post("/login",async(req,res)=>{
                     // result == true
                     if(result){
                         const token = jwt.sign({"Userid":admin[0]._id},"hush")
-                        res.send({"msg":"user login successfull","token":token,role:"user"})
+                        res.send({"msg":"user login successfull","token":token,role:"user",name:admin.name})
                     }else{
-                        res.send({"msg":"login failed"})
+                        res.send({"err":"login failed"})
                     }
                 });
 
             }
             
         }else {
-            res.send({"msg":"login failed"})
+            res.send({"err":"login failed"})
         }
     } catch (error) {
-        res.send({"msg":"Something went wrong, please try again later"})
+        res.send({"err":"Something went wrong, please try again later"})
     }
 })
 

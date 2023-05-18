@@ -1,5 +1,12 @@
+let loginLogoutshow = ()=>{
+  let isLogin = localStorage.getItem('token') || undefined;
+  console.log("sad");
+  let logoutbtn = document.getElementById("logOutBtn");
+  let loginbtn = document.getElementById("loginBtn");
+  isLogin?(loginbtn.style.display='none',logoutbtn.style.display='block'):(logoutbtn.style.display= 'none' ,loginbtn.style.display='block')
+}
+
 window.onload = () => {
-  console.log("sd");
   var loginBtn = document.getElementById("loginBtn");
   var loginPopup = document.getElementById("loginPopup");
   var signupPopup = document.getElementById("signupPopup");
@@ -7,6 +14,7 @@ window.onload = () => {
   // Get the close buttons for the popups
   var loginClose = loginPopup.querySelector(".close");
   var signupClose = signupPopup.querySelector(".close");
+  console.log(location);
 
   // Get the signup and login links inside the popups
   var signupLink = document.getElementById("signupLink");
@@ -42,10 +50,42 @@ window.onload = () => {
   // submit for login
 
   let formLogin = document.querySelector("#loginPopup form");
+  console.log(formLogin);
   formLogin.addEventListener("submit", (e) => {
     e.preventDefault();
+logit(e.target[0].value,e.target[1].value).then(data=>{
+  console.log(data);
+  let successmsg = document.getElementById("SucessfullMessage");
+  let btn = successmsg.querySelector("#SucessfullMessagebtn")
+  if(data.msg){
+    successmsg.style.display = "flex"
+   btn.innerText = `${data.msg} ${data.name}`
+    setTimeout(() => {
+      successmsg.style.display = "none";
+    }, 1800);
+    loginPopup.style.display = "none";
+    if(data.role=="admin"){
+      window.location.href = "./admin/admin.html"
+    }
+  }
+})
+
   });
-  // .querySelectorAll("input")
+   let logoutbtn = document.getElementById("logOutBtn");
+   logoutbtn.onclick = ()=>{
+console.log("sdf");
+localStorage.removeItem('token')
+  let successmsg = document.getElementById("SucessfullMessage");
+  let btn = successmsg.querySelector("#SucessfullMessagebtn");
+    successmsg.style.display = "flex";
+    setTimeout(() => {
+      successmsg.style.display = "none";
+    }, 1800);
+    btn.innerText = "SucessFully Logged Out"
+loginLogoutshow()
+   }
+
+  loginLogoutshow();
 };
 
 // function regit(){
@@ -77,39 +117,25 @@ window.onload = () => {
 //      });
 // }
 
-// function logit(){
-//     let e =  document.getElementById("lemail");
-//        let email= e.value;
-//     let psd =  document.getElementById("lpass");
-//     let password = psd.value;
-//  let obj = {
-//      email,
-//      password
-//  }
-//     fetch("http://localhost:8080/login", {
-//       method: "POST",
-//       body: JSON.stringify(obj),
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//     })
-//       .then(function (response) {
-//         return response.json();
-//       })
-//       .then(function (data) {
-//         console.log(data);
-//         localStorage.setItem("token", data.token);
-//         if (data.role == "admin") {
-//           window.location.href = "../admin/admin.html";
-//         } else if (data.role == "user") {
-//           window.location.href = "../index.html";
-//         }
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
+function logit(e,psd){
+console.log(e,psd);
+ return fetch("http://localhost:8080/api/login", {
+      method: "POST",
+      body: JSON.stringify({email:e,password:psd}),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then( response=>{
+        return response.json();
+      })
+      .then(data=> {
+        localStorage.setItem("token", data.token);
+        loginLogoutshow()
+        return data
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-//    document.getElementById("email").value=null;
-//     document.getElementById("Password").value=null;
-
-//  }
+ }
