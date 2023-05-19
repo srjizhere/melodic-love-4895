@@ -8,11 +8,12 @@ const {AdminModel} = require("../model/admin.model.js")
 //const {UserModel} = require("../model/users.model.js)
 
 
+
 adminRouter.post("/signup",async(req,res)=>{
     const {name,email,password,role} = req.body
     const adminPresent = await AdminModel.findOne({email});
     if(adminPresent){
-       return res.send({"err":"try logging in admin already present"})
+       return res.send({"err":`try logging in ${adminPresent.role} already present`})
     }
     try {
         bcrypt.hash(password, 6, async function(err, hash) {
@@ -22,7 +23,7 @@ adminRouter.post("/signup",async(req,res)=>{
            return res.send({"msg":"signup successfull"})
         });
     } catch (error) {
-        res.send({"err":"some error in SignUp"})
+        res.status(401).send({"err":"some error in SignUp"})
         console.log("error in signing up")
         console.log(error)
     }
