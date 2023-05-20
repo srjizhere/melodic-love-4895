@@ -5,7 +5,7 @@ let loginLogoutshow = ()=>{
   isLogin?(loginbtn.style.display='none',logoutbtn.style.display='block'):(logoutbtn.style.display= 'none' ,loginbtn.style.display='block')
 }
 
-
+// <---------------window onload starts ----------->
 window.onload = () => {
     loginLogoutshow();
        let successmsg = document.getElementById("SucessfullMessage");
@@ -55,9 +55,10 @@ window.onload = () => {
   formLogin.addEventListener("submit", (e) => {
     e.preventDefault();
     logit(e.target[0].value,e.target[1].value).then(data=>{
-      console.log(data);
-      if(data?.msg){
+      if(data?.msg && data?.token){
         console.log(data);
+        localStorage.setItem('token',data.token)
+        loginLogoutshow()
         successmsg.style.display = "flex"
    btn.innerText = `${data.msg} ${data.name}`
    console.log(btn.innerText);
@@ -71,7 +72,6 @@ window.onload = () => {
   }else{
     console.log("else visitiod");
     successmsg.style.display = "flex";
-    console.log(btn);
     btn.style.backgroundColor = "red";
         data.err?btn.innerText = `${data.err}`:"something went worng"
         setTimeout(() => {
@@ -127,34 +127,18 @@ formSignUp.addEventListener('submit',(e)=>{
         }
 
  })
-
-
-
 })
-
-
-
-
-
-
-
 }
+// <---------------window onload ends ----------->
 
 
-
-
-
-
-
-async function regit(name,email,password,role){
-   
+let   regit = async(name,email,password,role)=>{
 let obj = {
     name,
     email,
     password,
     role
 }
-console.log(obj);
    let successmsg = document.getElementById("SucessfullMessage");
    let btn = successmsg.querySelector("#SucessfullMessagebtn");
    let signupPopup = document.getElementById("signupPopup");
@@ -173,7 +157,6 @@ console.log(obj);
        return data
      })
      .catch((error) => {
-      console.log("catch in 174 visited");
         btn.style.backgroundColor = "red";
         successmsg.style.display = "flex";
         btn.innerText = `${error.message}`;
@@ -186,13 +169,7 @@ console.log(obj);
      });
 }
 
-
-
-
-
-
 async function logit(e,psd){
-console.log(e,psd);
  return fetch("http://localhost:8080/api/login", {
       method: "POST",
       body: JSON.stringify({email:e,password:psd}),
@@ -210,7 +187,6 @@ console.log(e,psd);
           let successmsg = document.getElementById("SucessfullMessage");
           let btn = successmsg.querySelector("#SucessfullMessagebtn");
           btn.style.backgroundColor = "red";
-          console.log(btn.style.backgroundColor);
          successmsg.style.display = "flex";
      btn.innerText = `${error.message}`
      setTimeout(() => {

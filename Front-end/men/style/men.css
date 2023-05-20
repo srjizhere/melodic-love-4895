@@ -1,110 +1,150 @@
-*{
-    /* margin: 0%;
-    padding: 0%; */
-    font-family: sans-serif;
-}
 
 #navbar{
-    width: 100%;
-    height: 150px;
-    border: 0px solid red;
+    object-fit:contain;
 }
-#main{
-    width: 100%;
-    height: auto;
-    border: 0px solid green;
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns:15% 85%;
-    
+body{
+    overflow-x: hidden;
+    object-fit: scale-down;
 }
 
-#filter_div{
-    border: 0px solid red;
-   
+#main{
+    width: 94%;
+    margin: auto;
+    border: 1px solid green;
+    margin-top: 20px;
+    overflow: hidden;
+    object-fit: scale-down;
 }
 
 #product_div{
-    border: 0px solid blue;
-    box-sizing: content-box;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    padding-top: 0.5vh;
     
 }
-.filter_div{
-     border-bottom:1px solid grey;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 80%;
-    margin: auto;
-    /* font-weight: bolder; */
-    display: flex;
-    justify-content: space-between;
-    
-}
-.filter_div>div:nth-child(1){
-    font-weight: bold;
-    cursor: pointer;
-}
-.filter_div>div:nth-child(2){
-    border: 0px solid red;
-    font-size: 25px;
-    color: grey;
-}
-#category{
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid grey;
-}
-#category>div:nth-child(1){
-    font-size: 8px;
-}
-#category_box{
-    width: 100%;
-    height: 20px;
-    border: 0px solid yellow;
-    display: flex;
-    justify-content: space-evenly;
-}
+
 #clothes{
-    border: 0px solid red;
-    width: 100%;
-    height: 1000px;
+    border: 1px solid rgb(255, 94, 0);
+    margin: auto;
+    padding: 2vh 0px;
+    width: 90%;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 10px;
-    overflow: hidden;
-    overflow-y: scroll;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16vh 10%;
+    object-fit: scale-down;
+    padding: 10px 30px;
 }
 #clothes>div{
-    border: 0px solid grey;
-    height: auto;
-}
-#clothes>div img{
-    width: 100%;
-}
-#sort{
-    border: 0px solid brown;
-    height: 40px;
-    width:97.7%;
-    padding-left: 10px;
-    padding-right: 10px;
+    background-color: #F5F5DC ; 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 435px;
+    text-align:center;
+    border-radius: 10px;
+   color: #333;
+   text-transform: capitalize;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+#clothes>div>p{
+    color: #800000;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    font-weight: bolder;
+}
+#clothes>div>div{
+    height: 300px;
+    overflow: hidden;
+    background-color: #fffafa;
+    border: 3px solid gold;
 }
 
-/* #sort>div{
-    border: 1px solid blue;
+#clothes>div img{
+    object-fit: contain;
+    width: 90%;
+    height: 100%;
+}
+#clothes>div>div>img:hover{
+    cursor: pointer;
+   transition: 1s ease-out;
+   scale: 1.1;
+}
+/* #clothes>div >h1 */
 
-} */
-#sort>div:nth-child(2){
-    margin-right: 20px;
+.addcart{
+    background-color: #A52A2A;
+    text-transform: capitalize;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: whitesmoke;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    width: 55%;
+    margin: auto;
 }
-#filter{
-    /* background-color: aqua; */
-    width: 200px;
-    padding: 8px 10px;
-    border-radius: 0px;
-    border-color: grey;
+.addcart:hover{
+    background-color: rgba(1, 117, 1, 0.633);
+    scale: 1.03;
+    transition: 0.3s ease-in-out;
 }
+
+
+.select-wrapper {
+  position: relative;
+  width: 200px;
+}
+
+.custom-select {
+    margin-left: 35px;
+  appearance: none;
+  outline: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  background-image: linear-gradient(45deg, transparent 50%, #888 50%),
+    linear-gradient(135deg, #888 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px, 2px 2px;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-select::-ms-expand {
+  display: none;
+}
+
+.custom-select option {
+  padding: 10px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+}
+
+.custom-select:hover,
+.custom-select:focus {
+  background-color: #eaeaea;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#sort{
+    border: 1px solid rgb(255, 39, 237);
+    height:9.5vh;
+    padding-left: 50px;
+    display: flex;
+    padding-top: 0.5vh;
+    padding: 0.5vh;
+} 
+
 a{
     text-decoration: none;
     color: black;
