@@ -14,7 +14,7 @@ body{
         }
 
         #navbar{
-            padding: 2px 10px 2px 10px;
+            border-radius: 0px 0px 20px 20px   ;
             overflow: hidden;
             position: sticky;
             object-fit: scale-down;
@@ -77,12 +77,19 @@ body{
             display: flex;
             list-style: none;
             justify-content: space-around;
+            padding: 5px;
         }
 
         #nav>ul>li {
-            font-size:large;
-            padding: 1vh;
+        font-weight: bolder;
+        font-size:22px;
+        color: #333;
+        padding: 2px;
         }
+        #nav>ul>li :hover{
+      
+        }
+
 
         li>a {
             text-decoration: none;

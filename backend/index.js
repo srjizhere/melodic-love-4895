@@ -36,7 +36,7 @@ app.get("/",async(req,res)=>{
 // })
 
 app.use("/api",adminRouter);
-app.use("/api/cart", cartRouter);
+app.use("/api/cart",authentication, cartRouter);
 app.use("/api/adminproducts", productRouter);
 
 app.listen(process.env.port, async()=>{

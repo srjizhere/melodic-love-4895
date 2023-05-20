@@ -53,7 +53,7 @@ adminRouter.post("/login",async(req,res)=>{
                     // result == true
                     if(result){
                         const token = jwt.sign({"Userid":admin[0]._id},"hush")
-                        res.send({"msg":"user login successfull","token":token,role:"user",name:admin.name})
+                        res.send({"msg":"user login successfull","token":token,role:"user",name:admin[0].name})
                     }else{
                         res.send({"err":"login failed"})
                     }
