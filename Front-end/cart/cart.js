@@ -88,6 +88,8 @@ let product_remove = async (id) => {
 
 
 let buy = document.getElementById("buy");
-buy.addEventListener("click", function () {
- 
+buy.addEventListener("click", async function () {
+ console.log("But Button Clicked ");
+ window.location.href  = "../components/checkout/checkout.html"
+
 });
