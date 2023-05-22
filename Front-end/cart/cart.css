@@ -10,7 +10,8 @@
     margin: auto;
     border: 0px solid green;
     margin-top: 30px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
 }
 #product_container>div{
 width: 250px;
