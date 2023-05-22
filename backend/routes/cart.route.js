@@ -32,9 +32,24 @@ cartRouter.post("/post",async (req,res)=>{
     }
     })
 
-    
+cartRouter.delete("/remove/:id",async(req,res)=>{
+    let id = req.params.id
+    console.log(id,"thisis a id");
+    try {
+        let removed = await CartModel.findByIdAndDelete(id)
+        // console.log(removed);
+        if(removed){
+            res.status(202).send({"msg":"Item removed"})
+        }else{
+            res.send({"err":"could not able to "})
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(400).send({"err":error.message})
+    }
+})   
 
-cartRouter.delete("/delete",async(req,res)=>{
+cartRouter.post("/buy",async(req,res)=>{
     try {
         //const cartID = req.params.cartID
     const Userid = req.body.Userid
