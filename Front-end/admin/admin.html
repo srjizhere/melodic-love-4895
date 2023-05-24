@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./admin.css" />
-    <link rel="stylesheet" href="../components/foot/footer.css" />
-    <link rel="stylesheet" href="../components/navbar/navbar.css" />
-  </head>
-  <body>
-    <div id="navbar"></div>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"  crossorigin="anonymous">
 
-    <div id="post">
-      <form id="form-group">
-        <input
-          type="text"
-          id="form_control_file"
-          name="logo"
-          placeholder="imageurl"
-        />
-        <input
-          type="text"
-          id="form_control"
-          placeholder="title"
-          name="nspeakers"
-        />
-        <input type="text" id="category" placeholder="category" />
-        <input type="text" id="type" placeholder="type" />
-        <input type="number" id="price" placeholder="price" />
-        <input type="text" id="brand" placeholder="brand" />
-        <input type="submit" value="Post" id="btn btn-default" />
-      </form>
-    </div>
-    <div id="footer"></div>
-  </body>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    
+<div class="navbar">
+  <a href="#"><i class="fas fa-home fa-lg"></i></a>
+  <a href="#"  id="logoutbtn"><i class="fas fa-sign-out-alt fa-lg"></i></a>
+  <a href="#"><i class="fas fa-user fa-lg"></i></a>
+  <button onclick="changeVisibility()" id="hideseebtn">SHOW ITEMS</button>
+</div>
+
+
+<div class="admin-panel" id="adminpanel">
+<br id="formdata">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" required><br>
+  
+  <label for="price">Price:</label>
+  <input type="number" id="price" name="price" required><br>
+  
+  <label for="Category">Category:</label>
+  <select id="Category" name="Category" required>
+    <option value="Mens">Men</option>
+    <option value="Womens">Women</option>
+    <option value="Kids">Kids</option>
+  </select><br>
+  
+  <label for="category">Category:</label>
+  <select id="category" name="category" required>
+    <option value="shirts">Shirts</option>
+    <option value="pants">Pants</option>
+    <option value="shoes">Shoes</option>
+  </select><br>
+  
+  <label for="image_url">Image URL:</label>
+  <input type="text" id="image_url" name="image_url" required><br>
+  
+  <label for="brand">Brand:</label>
+  <input type="text" id="Brand" name="brand" required><br>
+  
+  <input type="submit" value="Submit">
+</form>
+</div>
+<!--  container  -->
+<div class="card-container" id="cardcontainer">
+ 
+  <!-- Repeat the card HTML for each product -->
+  
+</div>
+
+</body>
 </html>
-<script src="./admin.js"></script>
-<script type="module" src="./admingo.js"></script>
+
+<script src="admin.js"></script>

@@ -30,8 +30,8 @@ export default function navb() {
                     <div class="accessChild" id="logOutBtn"><i class="fa-solid fa-right-from-bracket fa-2xl"></i>
                         <p>LogOut</p>
                     </div>
-                    <div class="accessChild"><i class="fa-solid fa-cart-shopping fa-2xl"></i><p>Cart</p></div>
-                    <div class="accessChild"><i class="fa-sharp fa-solid fa-clock-rotate-left fa-2xl"></i><p>Purchases</p></div>
+                    <div id ="cartbtn" class="accessChild"><i class="fa-solid fa-cart-shopping fa-2xl"></i><p>Cart</p></div>
+                    <div id="purchasebtn" class="accessChild"><i class="fa-sharp fa-solid fa-clock-rotate-left fa-2xl"></i><p>Purchases</p></div>
 
              </div>
             

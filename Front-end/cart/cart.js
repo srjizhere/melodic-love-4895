@@ -17,15 +17,6 @@ let getData = async () => {
 };
 
 getData();
-// brand: "rebok";
-// category: "Mens";
-// editorID: "644eda9e7bc0660f67f1bebd";
-// logo: "https://cdn.shopify.com/s/files/1/1414/2498/products/CS_ClassicWhite_06_1080x.jpg?v=1614938700";
-// price: 2000;
-// title: "Plain White";
-// type: "shirts";
-// __v: 0;
-// _id: "644edc967bc0660f67f1bec5";
 
 function show_product(data) {
   let append_div = document.getElementById("product_container");
@@ -91,5 +82,4 @@ let buy = document.getElementById("buy");
 buy.addEventListener("click", async function () {
  console.log("But Button Clicked ");
  window.location.href  = "../components/checkout/checkout.html"
-
 });
