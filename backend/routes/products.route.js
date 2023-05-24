@@ -6,7 +6,7 @@ const productRouter = express.Router()
 const {ProductModel} = require("../model/products.model")
 
 productRouter.get("/",async(req,res)=>{
-    let editorID = "644eda9e7bc0660f67f1bebd";
+    let editorID = req.body.editorID
     const data = await ProductModel.find({"editorID":editorID})
     res.send(data)
 });
@@ -42,8 +42,9 @@ productRouter.post("/post",async (req,res)=>{
         const payload = req.body
         //console.log(payload);
         const note = await ProductModel.findOne({_id:productID})
-        if(editorID !== note.editorID){
-           return res.status(401).send({msg:"you are not authorised "})
+        console.log(editorID,note.editorID);
+        if(editorID != note.editorID){
+           return res.status(401).send({err:"you are not authorised "})
         }
         else{
             await ProductModel.findByIdAndUpdate({_id : productID},payload)

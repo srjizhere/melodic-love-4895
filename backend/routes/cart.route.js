@@ -64,7 +64,7 @@ cartRouter.post("/buy", async (req, res) => {
     console.log(Purchased);
     let deletedDAta = await CartModel.deleteMany({"Userid":Userid})
     console.log(deletedDAta);
-    res.send({ msg: "item deleted successfully" });
+    res.send({ msg: "item Purchased successfully" });
   } catch (error) {
     console.log(error);
     res.send({"err":"something went worng"})

@@ -95,6 +95,23 @@ localStorage.removeItem('token')
     btn.innerText = "SucessFully Logged Out"
 loginLogoutshow()
    }
+   let cartbtn = loginBtn.parentElement.querySelector("#cartbtn")
+   let purchasebtn = loginBtn.parentElement.querySelector("#purchasebtn")
+   cartbtn.addEventListener("click",(e)=>{
+    if(localStorage.getItem("token")){
+      window.location.href = "./cart/cart.html"
+    }else{
+      loginPopup.style.display  = "block"
+    }
+   })
+   
+   purchasebtn.addEventListener("click",(e)=>{
+    if(localStorage.getItem("token")){
+      // window.location.href = ""   //make purchase page
+    }else{
+      loginPopup.style.display  = "block"
+    }
+   })
 
   //<----------------------- submit for login ends------------------------------>
 
