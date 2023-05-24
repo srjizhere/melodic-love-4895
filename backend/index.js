@@ -28,12 +28,12 @@ app.get("/",async(req,res)=>{
     const data = await ProductModel.find(query)
     res.send(data)
 });
-app.post('/insert',async(req,res)=>{
-    let arr = req.body
-let ans  =await  ProductModel.insertMany(arr)
-console.log(ans);
-res.send({msg:"done"})
-})
+// app.post('/insert',async(req,res)=>{
+//     let arr = req.body
+// let ans  =await  ProductModel.insertMany(arr)
+// console.log(ans);
+// res.send({msg:"done"})
+// })
 
 app.use("/api",adminRouter);
 app.use("/api/cart",authentication, cartRouter);
