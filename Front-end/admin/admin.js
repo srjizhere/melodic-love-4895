@@ -1,3 +1,4 @@
+
  let token = localStorage.getItem("token") || undefined
 getData();
 document.getElementById("logoutbtn").addEventListener("click",(e)=>{
@@ -79,10 +80,9 @@ function showCards(arr) {
     labelcategory.setAttribute("for", "card-body-category-" + (i + 1));
     labelcategory.textContent = "Category:";
 
-    const selectcategory = document.createElement("select");
+    let selectcategory = document.createElement("select");
     selectcategory.setAttribute("name", "card-body-category");
     selectcategory.setAttribute("id", "card-body-category-" + (i + 1));
-    selectcategory.value = e.category;
     selectcategory.disabled = true;
 
     const option1category = document.createElement("option");
@@ -90,7 +90,7 @@ function showCards(arr) {
     option1category.textContent = "Men";
 
     const option2category = document.createElement("option");
-    option2category.setAttribute("value", "Womens");
+    option2category.setAttribute("value", "Women");
     option2category.textContent = "Women";
 
     const option3category = document.createElement("option");
@@ -100,6 +100,7 @@ function showCards(arr) {
     selectcategory.appendChild(option1category);
     selectcategory.appendChild(option2category);
     selectcategory.appendChild(option3category);
+    selectcategory.value = e.category;
 
     // Append the label and select element to the parent element of your choice
 
@@ -112,7 +113,7 @@ function showCards(arr) {
     const selectType = document.createElement("select");
     selectType.setAttribute("name", "card-body-type");
     selectType.setAttribute("id", "card-body-type" + (i + 1));
-    selectType.value = e.type;
+  
     selectType.disabled = true;
     // create option elements and add them to select element
     const option1Type = document.createElement("option");
@@ -125,11 +126,32 @@ function showCards(arr) {
 
     const option3Type = document.createElement("option");
     option3Type.setAttribute("value", "shoes");
-    option3Type.textContent = "Shoe";
+    option3Type.textContent = "shoes";
+
+     const option4Type = document.createElement("option");
+    option4Type.setAttribute("value", "bagpack");
+    option4Type.textContent = "bagpack";
+
+     const option5Type = document.createElement("option");
+    option5Type.setAttribute("value", "skirts");
+    option5Type.textContent = "skirts";
+    
+    const option6Type = document.createElement("option");
+   option6Type.setAttribute("value", "dress");
+   option6Type.textContent = "dress";
+   
+   const option7Type = document.createElement("option");
+  option7Type.setAttribute("value", "beauty");
+  option7Type.textContent = "beauty";
 
     selectType.appendChild(option1Type);
     selectType.appendChild(option2Type);
     selectType.appendChild(option3Type);
+    selectType.appendChild(option4Type);
+    selectType.appendChild(option5Type);
+    selectType.appendChild(option6Type);
+    selectType.appendChild(option7Type);
+    selectType.value = e.type;
 
     // Create the label and input elements for description
     const labelimageUrl = document.createElement("label");
