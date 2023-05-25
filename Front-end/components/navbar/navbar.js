@@ -50,10 +50,6 @@ export default function navb() {
                 </li>
                 <li id="kids"><a href="/kids/kid.html">Kids</a>
                 </li>
-               
-                <li id="Activewear"><a href="#">Active Wear</a>
-                </li>
-
                 <li id="home"><a href="/index.html">Home</a>
                 </li>
                 <li id="beauty"><a href="/beauty/beauty.html">Beauty</a>

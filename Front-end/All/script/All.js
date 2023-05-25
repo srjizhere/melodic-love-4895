@@ -1,15 +1,10 @@
 
-let  sort_by_price = ()=> {
-
+let SortByChoice = () => {
   let sortValue = document.getElementById("sortbyvalue").value;
   let type = document.getElementById("type").value;
-  getData(sortValue, type);
-}
-let filterbycategory=()=> {
-  let sortValue = document.getElementById("sortbyvalue").value;
-  let type = document.getElementById("type").value;
-  getData(sortValue, type);
-}
+  let gender = document.getElementById("sortbygender").value;
+  getData(sortValue, type, gender);
+};
 
 let add_to_cart = async (id) => {
   let successmsg = document.getElementById("SucessfullMessage");
@@ -87,14 +82,14 @@ let show_clothes = (data) => {
   });
 };
 // pi.example.com/endpoint?param1=value1&param2=value2
-let getData = async (sort_by_price, filter_type) => {
-  let cate ="?category=Mens"
-   filter_type =  filter_type == "shirts"? "&type=shirts": filter_type == "pants"? "&type=pants": filter_type == "shoes"? "&type=shoes":filter_type=="bagpack"?"&type=bagpack":"";
-    console.log(filter_type);
-
-  let data = await fetch("http://localhost:8080" + cate + filter_type, {
-    method: "GET",
-  });
+let getData = async (sort_by_price, filter_type,gender) => {
+  let url = "http://localhost:8080";
+  console.log( sort_by_price,filter_type,gender);
+  if(gender && filter_type) url+=`?category=${gender}&type=${filter_type}`;
+  else if(+gender && !filter_type) url+=`?category=${gender}`;
+  else if(!gender && filter_type) url+=`?type=${filter_type}`;
+console.log(url);
+  let data = await fetch(url);
   data = await data.json();
   if (sort_by_price == "low-high") {
     data.sort((a, b) => a.price - b.price);

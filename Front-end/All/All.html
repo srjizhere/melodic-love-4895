@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/men.css">
+    <link rel="stylesheet" href="./style/All.css">
     <link rel="stylesheet" href="../components/navbar/navbar.css">
     <link rel="stylesheet" href="../components/foot/footer.css">
     <link rel="stylesheet" href="../login/login.css">
@@ -26,19 +26,30 @@
            <!-- category tag -->
             <div id="sort" >
                 <div class="select-wrapper">
-                    <select class="custom-select" name="select by type" id="type" onchange="filterbycategory()">
-                        <option value=All>All Category</option>  
+                    <select class="custom-select" name="select by type" id="type" onchange="SortByChoice()">
+                        <option value="">All Category</option>  
                         <option value=shirts>shirts</option>
                         <option value=pants>Pants</option>
                         <option value=shoes>Shoes</option>
                         <option value=bagpack>bagpack</option>
+                        <option value=beauty>beauty</option>
+                        <option value=skirts>skirt</option>
+                        <option value=dress>dress</option>
                     </select>
                 </div>
                 <div class="select-wrapper">
-                    <select class="custom-select" name="sort" id="sortbyvalue" onchange="sort_by_price()">
-                        <option value="none">Sort by feature</option>  
+                    <select class="custom-select" name="sort" id="sortbyvalue" onchange="SortByChoice()">
+                        <option value="">Sort by feature</option>  
                         <option value=low-high>Sort by price: Low to High</option>
                         <option value=high-low>Sort by price: High to Low</option>
+                    </select>
+                </div>
+                <div class="select-wrapper">
+                    <select class="custom-select" name="sort" id="sortbygender" onchange="SortByChoice()">
+                        <option value="">Show by Gender</option>  
+                        <option value=Mens>Men</option>
+                        <option value=Women>Women</option>
+                        <option value=Kids>Kids</option>
                     </select>
                 </div>
             </div>
@@ -57,7 +68,7 @@
 
 </body>
 </html>
-<script src="./script/men.js"></script>
+<script src="./script/All.js"></script>
 <script type="module" src="../landing/landing_js/go.js"></script>
 <script src="../login/login.js"></script>
 

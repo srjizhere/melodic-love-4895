@@ -32,7 +32,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 375px;
+    height: 420px;
     text-align:center;
     border-radius: 10px;
    color: #333;
@@ -46,7 +46,7 @@ body{
     font-weight: bolder;
 }
 #clothes>div>div{
-    height: 60%;
+    height: 300px;
     overflow: hidden;
     background-color: #fffafa;
     border: 3px solid gold;

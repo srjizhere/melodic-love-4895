@@ -88,8 +88,15 @@ let show_clothes = (data) => {
 };
 // pi.example.com/endpoint?param1=value1&param2=value2
 let getData = async (sort_by_price, filter_type) => {
-  let cate ="?category=Mens"
-   filter_type =  filter_type == "shirts"? "&type=shirts": filter_type == "pants"? "&type=pants": filter_type == "shoes"? "&type=shoes":filter_type=="bagpack"?"&type=bagpack":"";
+  let cate ="?category=Women"
+   filter_type =  filter_type == "shirts"?  "&type=shirts": 
+   filter_type == "pants"?"&type=pants":
+    filter_type == "shoes"? "&type=shoes":
+    filter_type=="bagpack"? "&type=bagpack":
+    filter_type=="skirts"?"&type=skirts":
+    filter_type=="dress"?"&type=dress":
+    filter_type=="beauty"?"&type=beauty":"";
+
     console.log(filter_type);
 
   let data = await fetch("http://localhost:8080" + cate + filter_type, {
@@ -104,3 +111,7 @@ let getData = async (sort_by_price, filter_type) => {
   show_clothes(data);
 };
 getData();
+
+
+
+
