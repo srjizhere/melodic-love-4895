@@ -10,14 +10,14 @@ body{
 #main{
     width: 96%;
     margin: auto;
-    border:1px solid green;
+    /* border:1px solid green; */
     margin-top: 20px;
     overflow: hidden;
     object-fit: scale-down;
 }
 
 #clothes{
-    border: 1px solid rgb(255, 94, 0);
+    /* border: 1px solid rgb(255, 94, 0); */
     margin: auto;
     padding: 2vh 0px;
     width: 85%;
@@ -49,7 +49,7 @@ body{
     height: 60%;
     overflow: hidden;
     background-color: #fffafa;
-    border: 3px solid gold;
+    /* border: 3px solid gold; */
 }
 
 #clothes>div img{
@@ -130,7 +130,7 @@ body{
 
 
 #sort{
-    border: 1px solid rgb(255, 39, 237);
+    /* border: 1px solid rgb(255, 39, 237); */
     height:9.5vh;
     padding-left: 50px;
     display: flex;
