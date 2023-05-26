@@ -42,7 +42,7 @@ export default function navb() {
         <!--------------Navigation-Bar-------->
         <div id="nav">
             <ul class="navLinks">
-                <li id="sale"><a href="#">All</a>
+                <li id="All"><a href="/All/All.html">All</a>
                 </li>
                 <li id="women"><a href="/women/women.html">Women</a>
                 </li>
@@ -54,7 +54,6 @@ export default function navb() {
                 </li>
                 <li id="beauty"><a href="/beauty/beauty.html">Beauty</a>
                 </li>
-              
             </ul>
         </div>
     <!-- navbar ended -->
@@ -76,6 +75,8 @@ export default function navb() {
           <button type="submit">Login</button>
         </form>
         <p>Don't have an account? <a href="#" id="signupLink">Signup</a></p>
+        <button id="guestuser" class="Guestbtn">Guest User</button>
+        <button id="guestadmin" class="Guestbtn">Guest Admin</button>
       </div>
     </div>
 

@@ -70,5 +70,15 @@ cartRouter.post("/buy", async (req, res) => {
     res.send({"err":"something went worng"})
   }
 });
+cartRouter.get("/history",async(req,res)=>{
+  let Userid = req.body.Userid
+  try{
+    let data = await PurchaseModel.find({ Userid }).populate("productid");
+    res.send(data)
+  }catch(err){
+    console.log(err.stack);
+    res.send({err:err.message})
+  }
+})
 
 module.exports = { cartRouter };

@@ -7,20 +7,39 @@ body{
 }
         * {
             object-fit: scale-down;
-            margin: 0px;
+            margin: 2px;
             padding: 0px;
             font-family: 'Yantramanav', sans-serif;
             /* putting margin and padding to zero    */
         }
+        /* Track */
+::-webkit-scrollbar {
+  width: 20px;
+  z-index: 1000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #bd2b2b;
+  border-radius: 25px 10px;
+  height: 45px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
 
         #navbar{
             border-radius: 0px 0px 20px 20px   ;
             overflow: hidden;
             position: sticky;
-            object-fit: scale-down;
             top: 0;
+            width: 100%;
             margin: auto;
-            z-index: 2;
+            z-index: 1;
             background-color:rgb(255, 253, 250);
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         }
@@ -221,4 +240,18 @@ font-size: 1.2rem;
     }
     #sale:hover{
         cursor: not-allowed;
+    }
+    .Guestbtn{
+        padding: 5px 15px;
+        color: whitesmoke;
+        background-color: #bd2b2b;
+        font-weight: bold;
+        font-size: larger;
+        border-radius: 4px;
+    }
+    .Guestbtn:hover{
+       scale: 1.02;
+       transition: 0.4s ease-in-out;
+       cursor: pointer;
+       background-color: green;
     }
