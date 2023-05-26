@@ -99,7 +99,7 @@ loginLogoutshow()
    let purchasebtn = loginBtn.parentElement.querySelector("#purchasebtn")
    cartbtn.addEventListener("click",(e)=>{
     if(localStorage.getItem("token")){
-      window.location.href = "./cart/cart.html"
+      window.location.href = "../cart/cart.html"
     }else{
       loginPopup.style.display  = "block"
     }
@@ -107,7 +107,7 @@ loginLogoutshow()
    
    purchasebtn.addEventListener("click",(e)=>{
     if(localStorage.getItem("token")){
-      // window.location.href = ""   //make purchase page
+      window.location.href = "../Purchased/purchased.html"   //make purchase page
     }else{
       loginPopup.style.display  = "block"
     }
@@ -145,6 +145,64 @@ formSignUp.addEventListener('submit',(e)=>{
 
  })
 })
+document.getElementById("guestuser").addEventListener("click", () => {
+  logit("janedoe@gmail.com", "jane").then((data) => {
+    if (data?.msg && data?.token) {
+      console.log(data);
+      localStorage.setItem("token", data.token);
+      loginLogoutshow();
+      successmsg.style.display = "flex";
+      btn.innerText = `${data.msg} ${data.name}`;
+      console.log(btn.innerText);
+      setTimeout(() => {
+        successmsg.style.display = "none";
+      }, 2000);
+      loginPopup.style.display = "none";
+      if (data.role == "admin") {
+        window.location.href = "./admin/admin.html";
+      }
+    } else {
+      console.log("else visitiod");
+      successmsg.style.display = "flex";
+      btn.style.backgroundColor = "red";
+      data.err ? (btn.innerText = `${data.err}`) : "something went worng";
+      setTimeout(() => {
+        btn.style.backgroundColor = "#4CAF50";
+        successmsg.style.display = "none";
+      }, 3000);
+      loginPopup.style.display = "none";
+    }
+  });
+});
+document.getElementById("guestadmin").addEventListener("click", () => {
+  logit("bhiapatil@gmail.com", "suraj").then((data) => {
+    if (data?.msg && data?.token) {
+      console.log(data);
+      localStorage.setItem("token", data.token);
+      loginLogoutshow();
+      successmsg.style.display = "flex";
+      btn.innerText = `${data.msg} ${data.name}`;
+      console.log(btn.innerText);
+      setTimeout(() => {
+        successmsg.style.display = "none";
+      }, 2000);
+      loginPopup.style.display = "none";
+      if (data.role == "admin") {
+        window.location.href = "../admin/admin.html";
+      }
+    } else {
+      console.log("else visitiod");
+      successmsg.style.display = "flex";
+      btn.style.backgroundColor = "red";
+      data.err ? (btn.innerText = `${data.err}`) : "something went worng";
+      setTimeout(() => {
+        btn.style.backgroundColor = "#4CAF50";
+        successmsg.style.display = "none";
+      }, 3000);
+      loginPopup.style.display = "none";
+    }
+  });
+});
 }
 // <---------------window onload ends ----------->
 
@@ -215,3 +273,4 @@ async function logit(e,psd){
     });
 
  }
+

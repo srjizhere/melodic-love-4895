@@ -8,12 +8,6 @@ let filterbycategory = () => {
   let type = document.getElementById("type").value;
   getData(sortValue, type);
 };
-let genderFilter = ()=>{
-    let sortValue = document.getElementById("sortbyvalue").value;
-    let type = document.getElementById("type").value;
-    let gender = document.getElementById("gender").value;
-    getData(sortValue, type,gender);
-}
 
 let add_to_cart = async (id) => {
   let successmsg = document.getElementById("SucessfullMessage");
@@ -90,8 +84,8 @@ let show_clothes = (data) => {
 };
 
 // pi.example.com/endpoint?param1=value1&param2=value2
-let getData = async (sort_by_price, filter_type,gender) => {
-  let gender = "?category=Kids";
+let getData = async (sort_by_price, filter_type) => {
+  let cate = "?category=Kids";
   filter_type =
     filter_type == "shirts"
       ? "&type=shirts"

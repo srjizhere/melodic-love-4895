@@ -1,7 +1,7 @@
 let token = localStorage.getItem("token");
 let getData = async () => {
   try {
-    let data = await fetch("http://localhost:8080/api/cart", {
+    let data = await fetch("http://localhost:8080/api/cart/history", {
       method: "GET",
       headers: {
         authorization: `bearer ${token}`,
@@ -19,11 +19,17 @@ let getData = async () => {
 getData();
 
 function show_product(data) {
+  data.reverse()
   let append_div = document.getElementById("product_container");
   let subtotal = document.getElementById("amount");
-  let total =0;
+  let total = 0;
   append_div.innerHTML = null;
   data.forEach(function (element, i) {
+    let purchasedDate  =new Date(element.createdAt)
+    console.log(purchasedDate.getDate());
+    purchasedDate = purchasedDate.getDate().toString() +"/"+ (purchasedDate.getMonth()+1)+ "/" +purchasedDate.getFullYear()
+    console.log(purchasedDate);
+
     let el = element.productid;
 
     let card = document.createElement("div");
@@ -41,45 +47,21 @@ function show_product(data) {
 
     let name = document.createElement("p");
     name.innerText = el.title;
-    total+=el.price
+    total += el.price;
     let price = document.createElement("h3");
     price.innerText = `INR ${el.price}`;
     price.style.color = "red";
-    let remov = document.createElement("button");
-    remov.innerText = "Remove";
-    remov.addEventListener("click", function () {
-      product_remove(element._id);
-    });
+    let time = document.createElement("p");
+    time.innerText = `Purchased on:  ${purchasedDate}`
     //if(img_div.style.hover)
     img_div.append(img1);
-    card.append(img_div, tag, brand, name, price, remov);
+    card.append(img_div, tag, brand, name, price, time);
     append_div.append(card);
   });
-  subtotal.innerHTML = `<i class="fa-solid fa-indian-rupee-sign"></i> ${total.toFixed(2)}`;
+  subtotal.innerHTML = `<i class="fa-solid fa-indian-rupee-sign"></i> ${total.toFixed(
+    2
+  )}`;
 }
 
-let product_remove = async (id) => {
-  console.log(id);
-  try {
-    let data = await fetch("http://localhost:8080/api/cart/remove/"+id, {
-        method:"DELETE",
-      headers: {
-           'Content-type': 'application/json',
-        authorization: `Bearer ${token}`,
-      },
-    });
-    data = await data.json();
-    if(data.msg){
-        getData()
-    }
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 
-let buy = document.getElementById("buy");
-buy.addEventListener("click", async function () {
- console.log("But Button Clicked ");
- window.location.href  = "../components/checkout/checkout.html"
-});

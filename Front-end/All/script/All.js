@@ -86,7 +86,7 @@ let getData = async (sort_by_price, filter_type,gender) => {
   let url = "http://localhost:8080";
   console.log( sort_by_price,filter_type,gender);
   if(gender && filter_type) url+=`?category=${gender}&type=${filter_type}`;
-  else if(+gender && !filter_type) url+=`?category=${gender}`;
+  else if(gender && !filter_type) url+=`?category=${gender}`;
   else if(!gender && filter_type) url+=`?type=${filter_type}`;
 console.log(url);
   let data = await fetch(url);
